@@ -21,55 +21,65 @@
 
         <div id='game'>
 
-            <div id='timer'></div>
+            <div id='timer'>10</div>
 
             <h2>Question 1</h2>
             <form>
-                <input type="radio" name="answer" value="answer1"> Answer1<br>
-                <input type="radio" name="answer" value="answer2"> Answer2<br>
-                <input type="radio" name="answer" value="answer3"> Answer3<br>
-                <input type="radio" name="answer" value="answer4"> Answer4<br>
+                <input type="radio" name="answer" value='true'> Answer1<br>
+                <input type="radio" name="answer" value="false"> Answer2<br>
+                <input type="radio" name="answer" value="false"> Answer3<br>
+                <input type="radio" name="answer" value="false"> Answer4<br>
             </form>
 
 
             <h2>Question 2</h2>
             <form>
-                <input type="radio" name="answer" value="answer1"> Answer1<br>
-                <input type="radio" name="answer" value="answer2"> Answer2<br>
-                <input type="radio" name="answer" value="answer3"> Answer3<br>
-                <input type="radio" name="answer" value="answer4"> Answer4<br>
+                <input type="radio" name="answer" value="false"> Answer1<br>
+                <input type="radio" name="answer" value="true"> Answer2<br>
+                <input type="radio" name="answer" value="false"> Answer3<br>
+                <input type="radio" name="answer" value="false"> Answer4<br>
             </form>
 
             <h2>Question 3</h2>
             <form>
-                <input type="radio" name="answer" value="answer1"> Answer1<br>
-                <input type="radio" name="answer" value="answer2"> Answer2<br>
-                <input type="radio" name="answer" value="answer3"> Answer3<br>
-                <input type="radio" name="answer" value="answer4"> Answer4<br>
+                <input type="radio" name="answer" value="false"> Answer1<br>
+                <input type="radio" name="answer" value="false"> Answer2<br>
+                <input type="radio" name="answer" value="true"> Answer3<br>
+                <input type="radio" name="answer" value="false"> Answer4<br>
             </form>
 
             <h2>Question 4</h2>
             <form>
-                <input type="radio" name="answer" value="answer1"> Answer1<br>
-                <input type="radio" name="answer" value="answer2"> Answer2<br>
-                <input type="radio" name="answer" value="answer3"> Answer3<br>
-                <input type="radio" name="answer" value="answer4"> Answer4<br>
+                <input type="radio" name="answer" value="false"> Answer1<br>
+                <input type="radio" name="answer" value="false"> Answer2<br>
+                <input type="radio" name="answer" value="false"> Answer3<br>
+                <input type="radio" name="answer" value="true"> Answer4<br>
             </form>
 
             <h2>Question 5</h2>
             <form>
-                <input type="radio" name="answer" value="answer1"> Answer1<br>
-                <input type="radio" name="answer" value="answer2"> Answer2<br>
-                <input type="radio" name="answer" value="answer3"> Answer3<br>
-                <input type="radio" name="answer" value="answer4"> Answer4<br>
+                <input type="radio" name="answer" value="true"> Answer1<br>
+                <input type="radio" name="answer" value="false"> Answer2<br>
+                <input type="radio" name="answer" value="false"> Answer3<br>
+                <input type="radio" name="answer" value="false"> Answer4<br>
             </form>
+
+            <button id = 'finish'>Finish</button>
 
         </div>
 
+        <div id='game-results'>
+            <p>Correct Answers<span id='correct'></span></p>
+            <p>Incorrect Answers<span id='incorrect'></span></p>
+            <p>Unanswered<span id='unanswered'></span></p>
+        </div>
+
     </main>
+
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src='assets/javascript/app.js'></script>
+
 </body>
 
 </html>

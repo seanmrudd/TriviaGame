@@ -18,22 +18,62 @@
 //         $('#content').append(Answers1);
 //     })
 // })
-
-$('#game').hide(0, '#game');
-
 // setTimeout(sixtySeconds, 1000 * 60);
-var time = 60;
+
+var correct = 0;
+var incorrect = 0;
+var unanswered = 5;
 
 $('.game-start').on('click', function () {
     $('.game-start').hide('.game-start');
     $('#game').show('#game');
-    setTimeout(endGame, 1000 * 60);
-    function endGame (){
-        
+
+    // setTimeout(endGame, 1000 * 5);
+
+    // function endGame (){
+    //     ('#timer').append(time);
+    //     timeLeft = time;
+    //     time--;
+    // }
+
+    function endgame() {
+        $('#timer').hide(0, '#timer');
+        $('#game').hide(0, '#game');
+        $('#game-results').show(0, '#game-results');
     }
 
-    function count(){
-        time--;
-        $('#timer').append(countDown)
+    $('#finish').on('click', function () {
+        endgame();
+    })
+
+    function countDown() {
+        $('#timer').each(function () {
+            var count = parseInt($(this).html());
+            if (count !== 0) {
+                $(this).html(count - 1);
+            }
+            if (count == 0) {
+                endgame();
+            }
+        });
+    };
+
+    setInterval(countDown, 1000);
+
+    function scoring() {
+        
+        if ('answer' === 'true') {
+            correct++;
+        } else if ('answer' === 'false') {
+            incorrect++;
+        } else unanswered--;
     }
+
+    scoring();
+
+    $('#correct').text(": " + correct);
+    $('#incorrect').text(": " + incorrect);
+    $('#unanswered').text(": " + unanswered);
+
+    // $('input[name="answer"]=="true"')
 })
