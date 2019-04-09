@@ -40,6 +40,15 @@ $('.game-start').on('click', function () {
         $('#timer').hide(0, '#timer');
         $('#game').hide(0, '#game');
         $('#game-results').show(0, '#game-results');
+        
+        for (i=0;i<5;i++) {
+            var choice = $('input[name="answer"'+i).val();
+        }
+        if(choice=='true'){
+            correct++;
+        }else if (choice=='false'){
+            incorrect++
+        }else unanswered--;
     }
 
     $('#finish').on('click', function () {
@@ -53,23 +62,14 @@ $('.game-start').on('click', function () {
                 $(this).html(count - 1);
             }
             if (count == 0) {
+                clearInterval(countDown);
                 endgame();
             }
         });
     };
 
+
     setInterval(countDown, 1000);
-
-    function scoring() {
-        
-        if ('answer' === 'true') {
-            correct++;
-        } else if ('answer' === 'false') {
-            incorrect++;
-        } else unanswered--;
-    }
-
-    scoring();
 
     $('#correct').text(": " + correct);
     $('#incorrect').text(": " + incorrect);
