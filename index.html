@@ -15,58 +15,63 @@
     </header>
 
     <main>
-        <form class='game-start'>
+        <form id='game-start'>
             <input type='button' name='Start Game' value='start'>
         </form>
 
+        <div id='timer'></div>
+        <div id='questions'></div>
+        <div id='answers'></div>
+
+<!-- 
         <div id='game'>
 
-            <div id='timer'>10</div>
+            <div id='timer'>60</div>
 
             <h2>Question 1</h2>
             <form>
                 <input type="radio" name="answer1" value='correct'> Answer1<br>
-                <input type="radio" name="answer1" value="false"> Answer2<br>
-                <input type="radio" name="answer1" value="false"> Answer3<br>
-                <input type="radio" name="answer1" value="false"> Answer4<br>
+                <input type="radio" name="answer1" value="incorrect"> Answer2<br>
+                <input type="radio" name="answer1" value="incorrect"> Answer3<br>
+                <input type="radio" name="answer1" value="incorrect"> Answer4<br>
             </form>
 
 
             <h2>Question 2</h2>
             <form>
-                <input type="radio" name="answer2" value="false"> Answer1<br>
-                <input type="radio" name="answer2" value="true"> Answer2<br>
-                <input type="radio" name="answer2" value="false"> Answer3<br>
-                <input type="radio" name="answer2" value="false"> Answer4<br>
+                <input type="radio" name="answer2" value="incorrect"> Answer1<br>
+                <input type="radio" name="answer2" value="correct"> Answer2<br>
+                <input type="radio" name="answer2" value="incorrect"> Answer3<br>
+                <input type="radio" name="answer2" value="incorrect"> Answer4<br>
             </form>
 
             <h2>Question 3</h2>
             <form>
-                <input type="radio" name="answer3" value="false"> Answer1<br>
-                <input type="radio" name="answer3" value="false"> Answer2<br>
-                <input type="radio" name="answer3" value="true"> Answer3<br>
-                <input type="radio" name="answer3" value="false"> Answer4<br>
+                <input type="radio" name="answer3" value="incorrect"> Answer1<br>
+                <input type="radio" name="answer3" value="incorrect"> Answer2<br>
+                <input type="radio" name="answer3" value="correct"> Answer3<br>
+                <input type="radio" name="answer3" value="incorrect"> Answer4<br>
             </form>
 
             <h2>Question 4</h2>
             <form>
-                <input type="radio" name="answer4" value="false"> Answer1<br>
-                <input type="radio" name="answer4" value="false"> Answer2<br>
-                <input type="radio" name="answer4" value="false"> Answer3<br>
-                <input type="radio" name="answer4" value="true"> Answer4<br>
+                <input type="radio" name="answer4" value="incorrect"> Answer1<br>
+                <input type="radio" name="answer4" value="incorrect"> Answer2<br>
+                <input type="radio" name="answer4" value="incorrect"> Answer3<br>
+                <input type="radio" name="answer4" value="correct"> Answer4<br>
             </form>
 
             <h2>Question 5</h2>
             <form>
-                <input type="radio" name="answer5" value="true"> Answer1<br>
-                <input type="radio" name="answer5" value="false"> Answer2<br>
-                <input type="radio" name="answer5" value="false"> Answer3<br>
-                <input type="radio" name="answer5" value="false"> Answer4<br>
+                <input type="radio" name="answer5" value="correct"> Answer1<br>
+                <input type="radio" name="answer5" value="incorrect"> Answer2<br>
+                <input type="radio" name="answer5" value="incorrect"> Answer3<br>
+                <input type="radio" name="answer5" value="incorrect"> Answer4<br>
             </form>
 
             <button id = 'finish'>Finish</button>
 
-        </div>
+        </div> -->
 
         <div id='game-results'>
             <p>Correct Answers<span id='correct'></span></p>
@@ -78,7 +83,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src='assets/javascript/app.js'></script>
+    <script src='assets/javascript/app2.js'></script>
 
 </body>
 
