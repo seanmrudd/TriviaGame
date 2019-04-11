@@ -20,60 +20,61 @@
 // })
 // setTimeout(sixtySeconds, 1000 * 60);
 
+// setTimeout(endGame, 1000 * 5);
+
+// function endGame (){
+//     ('#timer').append(time);
+//     timeLeft = time;
+//     time--;
+// }
+
 var correct = 0;
 var incorrect = 0;
 var unanswered = 5;
+var timerRunning = false;
+
+function endgame() {
+    $('#timer').hide(0, '#timer');
+    $('#game').hide(0, '#game');
+    $('#game-results').show(0, '#game-results');
+}
+
+function countDown() {
+    $('#timer').each(function () {
+        var count = parseInt($('#timer').html());
+        if (count !== 0) {
+            $('#timer').html(count - 1);
+        }
+        if (count == 0) {
+            clearInterval(countDown);
+            endgame();
+        }
+    });
+    if (!timerRunning) {
+        setInterval(countDown, 1000);
+        timerRunning = true;
+    }
+};
 
 $('.game-start').on('click', function () {
     $('.game-start').hide('.game-start');
     $('#game').show('#game');
+    countDown();
 
-    // setTimeout(endGame, 1000 * 5);
-
-    // function endGame (){
-    //     ('#timer').append(time);
-    //     timeLeft = time;
-    //     time--;
-    // }
-
-    function endgame() {
-        $('#timer').hide(0, '#timer');
-        $('#game').hide(0, '#game');
-        $('#game-results').show(0, '#game-results');
-        
-        for (i=0;i<5;i++) {
-            var choice = $('input[name="answer"'+i).val();
-        }
-        if(choice=='true'){
+    $("input[type='radio']").on("click", function () {
+        var answer = $("input[name='answer1']:checked").val();
+        console.log(answer);
+        if (answer === 'correct') {
             correct++;
-        }else if (choice=='false'){
-            incorrect++
-        }else unanswered--;
-    }
+        }
+    });
 
     $('#finish').on('click', function () {
         endgame();
     })
 
-    function countDown() {
-        $('#timer').each(function () {
-            var count = parseInt($(this).html());
-            if (count !== 0) {
-                $(this).html(count - 1);
-            }
-            if (count == 0) {
-                clearInterval(countDown);
-                endgame();
-            }
-        });
-    };
-
-
-    setInterval(countDown, 1000);
-
     $('#correct').text(": " + correct);
     $('#incorrect').text(": " + incorrect);
     $('#unanswered').text(": " + unanswered);
 
-    // $('input[name="answer"]=="true"')
 })
