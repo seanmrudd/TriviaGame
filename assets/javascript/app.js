@@ -5,8 +5,8 @@ var timerRunning = false;
 var minusTime;
 
 function endgame() {
-    // $('#timer').hide(0, '#timer');
-    // $('#game').hide(0, '#game');
+    $('#timer').hide(0, '#timer');
+    $('#game').hide(0, '#game');
     $('#game-results').show(0, '#game-results');
     scoring1();
     scoring2();
