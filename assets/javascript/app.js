@@ -154,33 +154,3 @@ function scoring5() {
 $('#finish').on('click', function () {
     endgame();
 })
-
-
-// $(document ).ready(function() {
-
-//     startButton = $("<button>");
-
-//     startButton.addClass("start");
-
-//     $('#content').append(startButton);
-
-//     $('.start').text('Game Start');
-
-//     var Questions1 = ('<h1>This is question 1?</h1>')
-//     var Answers1 = ('radiobuttons go in here with answers')
-
-//     $(".start").on("click", function () {
-//         $('.start').hide('.start');
-//         $('#content').append(Question1);
-//         $('#content').append(Answers1);
-//     })
-// })
-// setTimeout(sixtySeconds, 1000 * 60);
-
-// setTimeout(endGame, 1000 * 5);
-
-// function endGame (){
-//     ('#timer').append(time);
-//     timeLeft = time;
-//     time--;
-// }
