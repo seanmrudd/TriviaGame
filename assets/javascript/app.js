@@ -1,9 +1,23 @@
+//Set variables
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
 var timerRunning = false;
 var minusTime;
 
+var answer1Array = [];
+            // console.log(answer1Array);
+var answer2Array = [];
+            // console.log(answer2Array);
+var answer3Array = [];
+            // console.log(answer3Array);
+var answer4Array = [];
+            // console.log(answer4Array);
+var answer5Array = [];
+            // console.log(answer5Array);
+
+
+//Create function that will end the game.  Will be used if player submits or if time runs out.
 function endgame() {
     $('#timer').hide(0, '#timer');
     $('#game').hide(0, '#game');
@@ -14,9 +28,9 @@ function endgame() {
     scoring4();
     scoring5();
     clearInterval(minusTime);
-
 }
 
+//Function for a countdown timer
 function countDown() {
     $('#timer').each(function () {
         var count = parseInt($('#timer').html());
@@ -34,29 +48,21 @@ function countDown() {
     }
 };
 
+//Function to start game.
 $('#game-start').on('click', function () {
     $('#game-start').hide('#game-start');
     $('#game').show('#game');
     countDown();
 })
 
-var answer1Array = [];
-console.log(answer1Array);
-var answer2Array = [];
-console.log(answer2Array);
-var answer3Array = [];
-console.log(answer3Array);
-var answer4Array = [];
-console.log(answer4Array);
-var answer5Array = [];
-console.log(answer5Array);
-
+//Function to put last on click value into the [0] index of array.  That [0] index value is used to score with.
 $("input[type='radio']").on("click", function () {
     var answerOne = $("input[name='answer1']:checked").val();
     console.log(answerOne);
     answer1Array.unshift(answerOne)
 });
 
+//Function to see if answer is right, wrong, or if left alone, unanswered
 function scoring1() {
     var answer1 = answer1Array[0];
     console.log(answer1Array);
@@ -151,6 +157,7 @@ function scoring5() {
     $('#unanswered').text(": " + unanswered);
 }
 
+//Function to end the game if submit button is clicked
 $('#finish').on('click', function () {
     endgame();
 })
